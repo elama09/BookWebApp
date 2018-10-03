@@ -9,13 +9,13 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container mt-4">
                 <div className="jumbotron">
                     <h1 className="display-4">Welcome to site..</h1>
                     <p className="lead">Some more information about this booksite</p>
                     <hr className="my-4" />
                     <p>And more clever things here</p>
-                    <a className="btn btn-primary btn-lg" href="#" role="button">More info push here</a>
+                    <a className="btn btn-primary btn-lg" href="#" role="button">More info / Link somewhere</a>
                 </div>
                 <Footer/>
             </div>
