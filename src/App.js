@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 import './App.css';
 import Home from './components/Home';
 import Info from './components/Info';
-import Books from './components/Books';
+import BooksMain from './components/BooksMain';
 
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" render={() => <Redirect to="/home" />} />
               <Route exact path="/home" component={Home} />
-              <Route exact path="/books" component={Books} />
+              <Route exact path="/books" component={BooksMain} />
               <Route exact path="/info" component={Info} />
               <Route path="/" render={() => <Redirect to="/" />} />
 

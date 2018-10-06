@@ -1,0 +1,29 @@
+[
+    {
+        "id":1,
+        "name": "Book1",
+        "author": "Somebody",
+        "year": 1931,
+        "text": "this is a great book nice",
+        "price": 34,
+        "details": "Dolor veniam ipsa. Quia iusto ex recusandae temporibus quis. Eum assumenda aliquid facere aperiam et deserunt sapiente et ut. Officiis qui esse id. Quidem doloremque non quas praesentium possimus laborum illo asperiores. Molestiae consequatur autem ut."
+    },
+    {
+        "id":2,
+        "name": "New book",
+        "author": "Bill Gates",
+        "year": 1999,
+        "text": "Voluptate beatae et ipsam.",
+        "price": 30,
+        "details": "Dolor veniam ipsa. Quia iusto ex recusandae temporibus quis. Eum assumenda aliquid facere aperiam et deserunt sapiente et ut. Officiis qui esse id. Quidem doloremque non quas praesentium possimus laborum illo asperiores. Molestiae consequatur autem ut."
+    },
+    {
+        "id":3,
+        "name": "Ugly book jee",
+        "author": "Somebody",
+        "year": 1931,
+        "text": "For now it ok to do it",
+        "price": 10.45,
+        "details": "Dolor veniam ipsa. Quia iusto ex recusandae temporibus quis. Eum assumenda aliquid facere aperiam et deserunt sapiente et ut. Officiis qui esse id. Quidem doloremque non quas praesentium possimus laborum illo asperiores. Molestiae consequatur autem ut."
+    }
+]
