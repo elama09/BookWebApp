@@ -4,34 +4,13 @@ import bookpic from '../img-book.jpg';
 class Books3 extends Component {
     constructor(props) {
         super(props);
-        this.state = { }
+        this.state = {}
     }
 
     render() {
         return (
             <div className="container">
                 <h2>Books 3!!!!</h2>
-
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Find book</span>
-                    </div>
-                    <input type="text" class="form-control" style={{ maxWidth: "250px" }} aria-describedby="inputGroup-sizing-sm"></input>
-                </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
-                    </div>
-                    <input type="text" class="form-control" style={{ maxWidth: "350px" }} aria-describedby="inputGroup-sizing-default"></input>
-                </div>
-
-                <div class="input-group input-group-lg">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">Find</span>
-                    </div>
-                    <input type="text" class="form-control" style={{ maxWidth: "550px" }} aria-describedby="inputGroup-sizing-lg"></input>
-                </div>
 
                 <div class="card-deck">
                     <div class="card border-dark">
@@ -99,8 +78,6 @@ class Books3 extends Component {
                 </div>
 
 
-
-
                 <div class="card" style={{
                     width: "500"
                 }}>
@@ -125,10 +102,11 @@ class Books3 extends Component {
                         <li class="page-item"><a class="page-link" onClick={this.props.pageOne} href="#">1</a></li>
                         <li class="page-item"><a class="page-link" onClick={this.props.pageTwo} href="#">2</a></li>
                         <li class="page-item active"><a class="page-link">3</a></li>
+                        <li class="page-item"><a class="page-link" onClick={this.props.pageFour} href="#">4</a></li>
                     </ul>
                 </nav>
 
-                
+
             </div>
         );
     }
