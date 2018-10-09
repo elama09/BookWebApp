@@ -9,20 +9,33 @@ class BookComp extends Component {
     }
 
     render() {
+        let mailto = `mailto:michael.tcharni@gmail.com?Subject=${this.props.book.name}`
+
         return (
-            <div class="card text-center">
-                <div class="card-header">
-                    Very Old Book
+            <div className="row mt-4">
+
+                <div className="col-4">
+                    <img className="img-fluid" src={bookpic} style={{
+                        maxWidth: "100%",
+                        minWidth: "100px",
+                        margin: "auto",
+                    }} alt="book"></img>
                 </div>
-                <img src={bookpic}></img>
-                <div class="card-body">
-                    <h5 class="card-title">{this.props.book.name} && {this.props.book.author}</h5>
-                    <p class="card-text">{this.props.text}</p>
-                    <a class="btn btn-secondary">Go somewhere</a>
+                <div className="col-8">
+                    <div class="">
+                        <h4 class="">{this.props.book.name}, written by {this.props.book.author}</h4>
+                        <button class="btn btn-secondary">More info</button>
+                        
+
+                        <h5> Price: {this.props.book.price}€</h5>
+                        <p>Question about this book?&nbsp;
+                            <a href={mailto} target="_top">Send Mail</a>
+                        </p>
+                        <i>Desription:</i><p>{this.props.book.text}</p>
+                    </div>
+
                 </div>
-                <div class="card-footer text-muted">
-                    Price: {this.props.price}€
-                </div>
+
             </div>
         );
     }
