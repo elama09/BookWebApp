@@ -12,6 +12,7 @@ import Pagination from "./Pagination";
 const allBooks = data;
 var foundBooks;
 var test;
+var elements = [];
 
 class BooksMain extends Component {
   constructor(props) {
@@ -24,26 +25,54 @@ class BooksMain extends Component {
   }
 
   componentDidMount() {
-    this.setState({ books: data });
-    test = data.map(book => {
+    this.setState({ books: data }, () => {
+      elements = []
       let counter = 1;
-
-      if (book.id % 4 === 0) {
-        return (
-          <BookComp book={book} key={book.id} /> && (
+      for (let i = 0; i < this.state.books.length; i++) {
+        if (this.state.books[i].id % 4 === 0) {
+          elements.push(
+            <BookComp book={this.state.books[i]} key={this.state.books[i].id} />
+          );
+          elements.push(
             <Pagination
-              activePage={counter++}
+              activePage={counter}
               pageOne={this.pageOne}
               pageTwo={this.pageTwo}
               pageThree={this.pageThree}
               pageFour={this.pageFour}
             />
-          )
-        );
-      } else {
-        return <BookComp book={book} key={book.id} />;
+          );
+          counter++;
+        } else {
+          elements.push(
+            <BookComp book={this.state.books[i]} key={this.state.books[i].id} />
+          );
+        }
       }
+      console.log(elements);
+      console.log(this.state.books);
     });
+
+    // test = data.map(book => {
+    //   let counter = 1;
+
+    //   if (book.id % 4 === 0) {
+    //     return (
+    //       <BookComp book={book} key={book.id} /> && (
+    //         <Pagination
+    //           activePage={counter}
+    //           pageOne={this.pageOne}
+    //           pageTwo={this.pageTwo}
+    //           pageThree={this.pageThree}
+    //           pageFour={this.pageFour}
+    //         />
+    //       )
+    //     );
+    //     counter++;
+    //   } else {
+    //     return <BookComp book={book} key={book.id} />;
+    //   }
+    // });
   }
 
   findBook = () => {
@@ -129,10 +158,12 @@ class BooksMain extends Component {
         </div>
 
         <button onClick={this.showAllBooks} class="btn btn-primary mt-2">
-          Show all book{" "}
+          Show all books{" "}
           <span class="badge badge-light">{this.state.books.length}</span>
         </button>
-        {test}
+
+        {elements}
+
         {/* {!this.state.searchMode && this.state.current === 1 && <Books1 pageTwo={this.pageTwo} pageThree={this.pageThree} pageFour={this.pageFour} />}
                 {!this.state.searchMode && this.state.current === 2 && <Books2 pageOne={this.pageOne} pageThree={this.pageThree} pageFour={this.pageFour} />}
                 {!this.state.searchMode && this.state.current === 3 && <Books3 pageOne={this.pageOne} pageTwo={this.pageTwo} pageFour={this.pageFour} />}
