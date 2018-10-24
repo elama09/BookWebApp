@@ -20,13 +20,14 @@ class BooksMain extends Component {
     this.state = {
       books: [],
       current: 1,
-      searchMode: false
+      searchMode: false,
+      update: false
     };
   }
 
   componentDidMount() {
     this.setState({ books: data }, () => {
-      elements = []
+      elements = [];
       let counter = 1;
       for (let i = 0; i < this.state.books.length; i++) {
         if (this.state.books[i].id % 4 === 0) {
@@ -51,28 +52,8 @@ class BooksMain extends Component {
       }
       console.log(elements);
       console.log(this.state.books);
+      this.setState({ update: !this.state.update });
     });
-
-    // test = data.map(book => {
-    //   let counter = 1;
-
-    //   if (book.id % 4 === 0) {
-    //     return (
-    //       <BookComp book={book} key={book.id} /> && (
-    //         <Pagination
-    //           activePage={counter}
-    //           pageOne={this.pageOne}
-    //           pageTwo={this.pageTwo}
-    //           pageThree={this.pageThree}
-    //           pageFour={this.pageFour}
-    //         />
-    //       )
-    //     );
-    //     counter++;
-    //   } else {
-    //     return <BookComp book={book} key={book.id} />;
-    //   }
-    // });
   }
 
   findBook = () => {
@@ -87,14 +68,16 @@ class BooksMain extends Component {
         }
       });
       foundBooks = tempBooks.map(value => {
-        return <Book book={value} key={value.id} />;
+        return <BookComp book={value} key={value.id} />
       });
+      
       this.setState({ searchMode: true });
     }
   };
 
   showAllBooks = () => {
     this.refs.search.value = "";
+    this.setState({searchMode: false})
   };
 
   pageOne = () => {
@@ -134,26 +117,12 @@ class BooksMain extends Component {
             </span>
           </div>
           <input
-            type="text"
-            class="form-control"
-            style={{ maxWidth: "350px" }}
-            aria-describedby="inputGroup-sizing-default"
-          />
-        </div>
-
-        <div class="input-group input-group-lg">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-lg">
-              Find
-            </span>
-          </div>
-          <input
             onChange={this.findBook}
             ref="search"
             type="text"
             class="form-control"
-            style={{ maxWidth: "550px" }}
-            aria-describedby="inputGroup-sizing-lg"
+            style={{ maxWidth: "350px" }}
+            aria-describedby="inputGroup-sizing-default"
           />
         </div>
 
@@ -162,8 +131,11 @@ class BooksMain extends Component {
           <span class="badge badge-light">{this.state.books.length}</span>
         </button>
 
-        {elements}
-
+        {!this.state.searchMode && this.state.current === 1 && elements.slice(0, 5)}
+        {!this.state.searchMode && this.state.current === 2 && elements.slice(5, 10)}
+        {!this.state.searchMode && this.state.current === 3 && elements.slice(10, 15)}
+        {!this.state.searchMode && this.state.current === 4 && elements.slice(15, 20)}
+        {this.state.searchMode && foundBooks}
         {/* {!this.state.searchMode && this.state.current === 1 && <Books1 pageTwo={this.pageTwo} pageThree={this.pageThree} pageFour={this.pageFour} />}
                 {!this.state.searchMode && this.state.current === 2 && <Books2 pageOne={this.pageOne} pageThree={this.pageThree} pageFour={this.pageFour} />}
                 {!this.state.searchMode && this.state.current === 3 && <Books3 pageOne={this.pageOne} pageTwo={this.pageTwo} pageFour={this.pageFour} />}
