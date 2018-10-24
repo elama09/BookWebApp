@@ -44,6 +44,19 @@ class BooksMain extends Component {
             />
           );
           counter++;
+        } else if (i-1 === this.state.books.length) {
+          elements.push(
+            <BookComp book={this.state.books[i]} key={this.state.books[i].id} />
+          );                                          // Not sure if this is working!
+          elements.push(                              // If last book, add last pagination page!
+            <Pagination
+              activePage={counter}
+              pageOne={this.pageOne}
+              pageTwo={this.pageTwo}
+              pageThree={this.pageThree}
+              pageFour={this.pageFour}
+            />
+          );
         } else {
           elements.push(
             <BookComp book={this.state.books[i]} key={this.state.books[i].id} />
