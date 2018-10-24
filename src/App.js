@@ -21,7 +21,7 @@ class App extends Component {
               <Route exact path="/home" component={Home} />
               <Route exact path="/books" component={BooksMain} />
               <Route exact path="/info" component={Info} />
-              <Route path="/" render={() => <Redirect to="/" />} />
+              <Route path="/" render={() => <Redirect to="/home" />} />
 
             </Switch>
           </div>
