@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 import Footer from "./Footer";
-import Books1 from "./Books1";
-import Books2 from "./Books2";
-import Books3 from "./Books3";
 import data from "../data.json";
-import Book from "./Book";
-import Books4 from "./Books4";
 import BookComp from "./BookComp";
 import Pagination from "./Pagination";
 
@@ -83,7 +78,6 @@ class BooksMain extends Component {
       foundBooks = tempBooks.map(value => {
         return <BookComp book={value} key={value.id} />
       });
-      
       this.setState({ searchMode: true });
     }
   };
@@ -149,12 +143,6 @@ class BooksMain extends Component {
         {!this.state.searchMode && this.state.current === 3 && elements.slice(10, 15)}
         {!this.state.searchMode && this.state.current === 4 && elements.slice(15, 20)}
         {this.state.searchMode && foundBooks}
-        {/* {!this.state.searchMode && this.state.current === 1 && <Books1 pageTwo={this.pageTwo} pageThree={this.pageThree} pageFour={this.pageFour} />}
-                {!this.state.searchMode && this.state.current === 2 && <Books2 pageOne={this.pageOne} pageThree={this.pageThree} pageFour={this.pageFour} />}
-                {!this.state.searchMode && this.state.current === 3 && <Books3 pageOne={this.pageOne} pageTwo={this.pageTwo} pageFour={this.pageFour} />}
-                {!this.state.searchMode && this.state.current === 4 && <Books4 pageOne={this.pageOne} pageTwo={this.pageTwo} pageThree={this.pageThree} />}
-
-                {this.state.searchMode && foundBooks} */}
 
         <Footer />
       </div>

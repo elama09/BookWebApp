@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Booksite",
+  "name": "Booksite for Rare Russian Books",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "Books.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
