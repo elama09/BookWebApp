@@ -102,22 +102,9 @@ class BooksMain extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div class="input-group input-group-sm mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-sm">
-              Find book
-            </span>
-          </div>
-          <input
-            type="text"
-            class="form-control"
-            style={{ maxWidth: "250px" }}
-            aria-describedby="inputGroup-sizing-sm"
-          />
-        </div>
+      <div className="container mt-3">
 
-        <div class="input-group mb-3">
+        <div class="input-group mb-1">
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default">
               Search
