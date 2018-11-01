@@ -14,5 +14,9 @@ code {
 }
 
 body {
-  background-color: floralwhite;
+  background-color: lightgray;
+}
+
+#search {
+  background-color:#83888385;
 }

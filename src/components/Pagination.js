@@ -9,7 +9,7 @@ class Pagination extends Component {
   render() {
     return (
       <nav>
-        <ul class="pagination pagination-lg justify-content-center mt-2 mb-5">
+        <ul class="pagination pagination-lg justify-content-center mt-3 mb-3">
           <li class={ this.props.activePage === 1 ? `page-item active` : `page-item` } >
             <a class="page-link" onClick={this.props.pageOne} href="#">
               1
