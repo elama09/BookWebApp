@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Footer from "./Footer";
-// import data from "../data.json";
 import BookComp from "./BookComp";
 import Pagination from "./Pagination";
 import { getBooksFromApi } from "../service";
