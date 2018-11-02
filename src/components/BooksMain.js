@@ -79,7 +79,10 @@ class BooksMain extends Component {
       let tempBooks = [];
       let searchValue = this.refs.search.value.toLowerCase();
       this.state.books.forEach(element => {
-        if (element.name.toLowerCase().includes(searchValue)) {
+        if (
+          element.name.toLowerCase().includes(searchValue) ||
+          element.author.toLowerCase().includes(searchValue)
+        ) {
           tempBooks.push(element);
         }
       });
@@ -145,7 +148,6 @@ class BooksMain extends Component {
           this.state.current === 4 &&
           elements.slice(15, 20)}
         {this.state.searchMode && foundBooks}
-
       </div>
     );
   }
