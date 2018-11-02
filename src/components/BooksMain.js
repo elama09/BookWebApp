@@ -134,6 +134,7 @@ class BooksMain extends Component {
           Show all books{" "}
           <span class="badge badge-light">{this.state.books.length}</span>
         </button>
+        <hr/>
 
         {!this.state.searchMode &&
           this.state.current === 1 &&
