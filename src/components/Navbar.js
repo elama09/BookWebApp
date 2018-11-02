@@ -53,7 +53,7 @@ class Navbar extends Component {
             </li>
           </ul>
           <span className="navbar-text">
-            Sales Of The Most Rare Russian Books
+            <b>Sales</b> Of The Most <b>Rare</b> Russian <b>Books</b>
           </span>
         </div>
       </nav>

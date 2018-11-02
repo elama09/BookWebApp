@@ -114,27 +114,26 @@ class BooksMain extends Component {
   render() {
     return (
       <div className="container mt-3">
-        <div class="input-group mb-1">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="search">
-              Search
-            </span>
+          <div class="input-group mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="search">
+                Search
+              </span>
+            </div>
+            <input
+              onChange={this.findBook}
+              ref="search"
+              type="text"
+              class="form-control"
+              style={{ maxWidth: "350px" }}
+            />
           </div>
-          <input
-            onChange={this.findBook}
-            ref="search"
-            type="text"
-            class="form-control"
-            style={{ maxWidth: "350px" }}
-            aria-describedby="inputGroup-sizing-default"
-          />
-        </div>
 
-        <button onClick={this.showAllBooks} class="btn btn-primary mt-2">
-          Show all books{" "}
-          <span class="badge badge-light">{this.state.books.length}</span>
-        </button>
-        <hr/>
+          <button onClick={this.showAllBooks} class="btn btn-primary mt-2">
+            Show all books{" "}
+            <span class="badge badge-light">{this.state.books.length}</span>
+          </button>
+        <hr />
 
         {!this.state.searchMode &&
           this.state.current === 1 &&
