@@ -46,14 +46,9 @@ class Navbar extends Component {
                 </a>
               </NavLink>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="">
-                Something
-              </a>
-            </li>
           </ul>
           <span className="navbar-text">
-            <b>Sales</b> Of The Most <b>Rare</b> Russian <b>Books</b>
+            <i>Sales</i> Of The Most <i>Rare</i> Russian <i>Books</i>
           </span>
         </div>
       </nav>

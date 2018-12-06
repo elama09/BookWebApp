@@ -29,7 +29,9 @@ class BookComp extends Component {
           <div className="col-4">
             <img
               className="img-fluid"
-              src={bookpic}
+              src={`http://www.elisanet.fi/romantestaus/images/${
+                this.props.book.id
+              }img1`}
               style={{
                 maxWidth: "100%",
                 minWidth: "100px",
@@ -40,21 +42,23 @@ class BookComp extends Component {
           </div>
           <div className="col-8">
             <div class="">
-              <h4 class="">
-                {this.props.book.name}, written by {this.props.book.author}
-              </h4>
-              <button class="btn btn-secondary">More info</button>
+              <h4 class="">{this.props.book.name}</h4>
+              <h4>{this.props.book.author} - {this.props.book.year}</h4>
+              <h5>{this.props.book.country}</h5>
+              <h5>Condition: {this.props.book.condition}</h5>
 
-              <h5> Price: {this.props.book.price}€</h5>
+              
               <p>
                 Question about this book?&nbsp;
                 <a href={mailto} target="_top">
                   Send Mail
                 </a>
               </p>
-              <Button color="info" onClick={this.toggle}>
+              <h5> Price: {this.props.book.price}€</h5>
+              <Button className="btn-sm" color="info" onClick={this.toggle}>
                 More photos
               </Button>
+              <br/>
               <Modal
                 isOpen={this.state.modal}
                 toggle={this.toggle}
@@ -66,9 +70,12 @@ class BookComp extends Component {
                 <ModalBody>
                   <img
                     alt="A Book"
-                    src={`www.google.com/${this.props.book.id}`}
+                    src={`http://www.elisanet.fi/romantestaus/images/${this.props.book.id}img2`}
                   />
-                  Some info or some text about this book, if needed
+                  <img
+                    alt="A Book"
+                    src={`http://www.elisanet.fi/romantestaus/images/${this.props.book.id}img3`}
+                  />
                 </ModalBody>
                 <ModalFooter>
                   <Button color="primary" onClick={this.toggle}>
@@ -80,8 +87,14 @@ class BookComp extends Component {
                 </ModalFooter>
               </Modal>
               <br />
-              <i>Desription:</i>
+              <i>Description:</i>
               <p>{this.props.book.text}</p>
+              <a target="_blank" href={this.props.book.link}>More info</a>
+              <br/>
+              {
+                this.props.book.details && <i>Details: {this.props.book.details}</i>
+              }
+              
             </div>
           </div>
         </div>
