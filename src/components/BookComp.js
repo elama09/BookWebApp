@@ -28,13 +28,13 @@ class BookComp extends Component {
         <div className="row mt-3">
           <div className="col-4">
             <img
-              className="img-fluid"
+              className="img-fluid fromImage"
               src={`http://www.elisanet.fi/romantestaus/images/${
                 this.props.book.id
               }img1`}
               style={{
                 maxWidth: "100%",
-                minWidth: "50px",
+                minWidth: "100px",
                 margin: "auto"
               }}
               alt="book"
@@ -49,12 +49,6 @@ class BookComp extends Component {
               <h5>{this.props.book.country}</h5>
               <h5>Condition: {this.props.book.condition}</h5>
 
-              <p>
-                Question about this book?&nbsp;
-                <a href={mailto} target="_top">
-                  Send Mail
-                </a>
-              </p>
               <h5> Price: {this.props.book.price}€</h5>
               <Button className="btn-sm" color="info" onClick={this.toggle}>
                 More photos
@@ -70,13 +64,21 @@ class BookComp extends Component {
                 </ModalHeader>
                 <ModalBody>
                   <img
-                    alt="A Book"
+                    alt="No more photos of this book"
+                    className="fromImage"
+                    style={{
+                      maxWidth: "100%"
+                    }}
                     src={`http://www.elisanet.fi/romantestaus/images/${
                       this.props.book.id
                     }img2`}
                   />
                   <img
-                    alt="A Book"
+                    alt=""
+                    className="fromImage"
+                    style={{
+                      maxWidth: "100%"
+                    }}
                     src={`http://www.elisanet.fi/romantestaus/images/${
                       this.props.book.id
                     }img3`}
@@ -92,11 +94,19 @@ class BookComp extends Component {
                 </ModalFooter>
               </Modal>
               <br />
-              <i>Description:</i>
+              <h5>Description:</h5>
               <p>{this.props.book.text}</p>
-              <a target="_blank" href={this.props.book.link}>
-                More info
-              </a>
+              <p>
+                Question about this book?&nbsp;
+                <a href={mailto} target="_top">
+                  Send Mail
+                </a>
+              </p>
+              {this.props.book.link ? (
+                <a target="_blank" href={this.props.book.link}>
+                  More info about the book
+                </a>
+              ) : null}
               <br />
               {this.props.book.details && (
                 <i>Details: {this.props.book.details}</i>

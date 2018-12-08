@@ -30,6 +30,11 @@ class Pagination extends Component {
               4
             </a>
           </li>
+          <li class={this.props.activePage === 5 ? `mr-2 page-item active` : `mr-2 page-item` }>
+            <a class="page-link" onClick={this.props.pageFive} href="#">
+              5
+            </a>
+          </li>
         </ul>
       </nav>
     )

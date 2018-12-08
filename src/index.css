@@ -38,3 +38,7 @@ hr {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
+.fromImage {
+  image-orientation: from-image;
+}

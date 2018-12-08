@@ -12,7 +12,7 @@ class Home extends Component {
       <div className="container mt-4">
         <div className="jumbotron">
           <h1 className="display-4">
-            Welcome to site - <i>Rare Russian Books</i>
+            Welcome to the site - <i>Rare Russian Books</i>
           </h1>
           <p className="lead">Rare books from a privat library for sale</p>
           <p className="lead">

@@ -33,7 +33,7 @@ class BooksMain extends Component {
     elements = [];
     let counter = 1;
     for (let i = 0; i < this.state.books.length; i++) {
-      if (this.state.books[i].id % 4 === 0) {
+      if (this.state.books[i].id % 26 === 0) {
         elements.push(
           <BookComp book={this.state.books[i]} key={this.state.books[i].id} />
         );
@@ -44,10 +44,11 @@ class BooksMain extends Component {
             pageTwo={this.pageTwo}
             pageThree={this.pageThree}
             pageFour={this.pageFour}
+            pageFive={this.pageFive}
           />
         );
         counter++;
-      } else if (i - 1 === this.state.books.length) {
+      } else if (i + 1 === this.state.books.length) {
         elements.push(
           <BookComp book={this.state.books[i]} key={this.state.books[i].id} />
         ); // Not sure if this is working!
@@ -59,6 +60,7 @@ class BooksMain extends Component {
             pageTwo={this.pageTwo}
             pageThree={this.pageThree}
             pageFour={this.pageFour}
+            pageFive={this.pageFive}
           />
         );
       } else {
@@ -68,7 +70,7 @@ class BooksMain extends Component {
       }
     }
     console.log(elements);
-    console.log(this.state.books);
+    // console.log(this.state.books);
     this.setState({ update: !this.state.update });
   }
 
@@ -110,43 +112,49 @@ class BooksMain extends Component {
   pageFour = () => {
     this.setState({ current: 4 });
   };
+  pageFive = () => {
+    this.setState({ current: 5 });
+  };
 
   render() {
     return (
       <div className="container mt-3">
-          <div class="input-group mb-1">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="search">
-                Search
-              </span>
-            </div>
-            <input
-              onChange={this.findBook}
-              ref="search"
-              type="text"
-              class="form-control"
-              style={{ maxWidth: "350px" }}
-            />
+        <div class="input-group mb-1">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="search">
+              Search
+            </span>
           </div>
+          <input
+            onChange={this.findBook}
+            ref="search"
+            type="text"
+            class="form-control"
+            style={{ maxWidth: "350px" }}
+          />
+        </div>
 
-          <button onClick={this.showAllBooks} class="btn btn-primary mt-2">
-            Show all books{" "}
-            <span class="badge badge-light">{this.state.books.length}</span>
-          </button>
+        <button onClick={this.showAllBooks} class="btn btn-primary mt-2">
+          Show all books{" "}
+          <span class="badge badge-light">{this.state.books.length}</span>
+        </button>
         <hr />
 
         {!this.state.searchMode &&
           this.state.current === 1 &&
-          elements.slice(0, 5)}
+          elements.slice(0, 27)}
         {!this.state.searchMode &&
           this.state.current === 2 &&
-          elements.slice(5, 10)}
+          elements.slice(27, 54)}
         {!this.state.searchMode &&
           this.state.current === 3 &&
-          elements.slice(10, 15)}
+          elements.slice(54, 81)}
         {!this.state.searchMode &&
           this.state.current === 4 &&
-          elements.slice(15, 20)}
+          elements.slice(81, 108)}
+        {!this.state.searchMode &&
+          this.state.current === 5 &&
+          elements.slice(108, 135)}
         {this.state.searchMode && foundBooks}
       </div>
     );
