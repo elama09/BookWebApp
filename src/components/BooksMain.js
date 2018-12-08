@@ -139,7 +139,14 @@ class BooksMain extends Component {
           <span class="badge badge-light">{this.state.books.length}</span>
         </button>
         <hr />
-
+        <Pagination
+            activePage={this.state.current}
+            pageOne={this.pageOne}
+            pageTwo={this.pageTwo}
+            pageThree={this.pageThree}
+            pageFour={this.pageFour}
+            pageFive={this.pageFive}
+          />
         {!this.state.searchMode &&
           this.state.current === 1 &&
           elements.slice(0, 27)}

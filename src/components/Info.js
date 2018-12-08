@@ -26,15 +26,15 @@ class Info extends Component {
           </p>
         </div>
         <div>
-          <h3 className="text-center">
+          <h4 className="text-center">
             {" "}
             <NavLink to="/books">Show Books</NavLink>
-          </h3>
+          </h4>
         </div>
 
         <div className="footer">
           <h6 className="text-center">
-            Footer here, © copyright Michael Tcharni / Rare Russian Books
+            © Copyright Michael / Rare Russian Books
           </h6>
         </div>
       </div>
