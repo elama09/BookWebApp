@@ -18,7 +18,7 @@ body {
 }
 
 #search {
-  background-color:#83888385;
+  background-color: #83888385;
 }
 
 hr {
@@ -29,4 +29,12 @@ hr {
 
 .footer {
   margin-top: 40%;
+}
+
+.rotate {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Footer from "./Footer";
 import { NavLink } from "react-router-dom";
 
 class Info extends Component {

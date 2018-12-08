@@ -34,7 +34,7 @@ class BookComp extends Component {
               }img1`}
               style={{
                 maxWidth: "100%",
-                minWidth: "100px",
+                minWidth: "50px",
                 margin: "auto"
               }}
               alt="book"
@@ -43,11 +43,12 @@ class BookComp extends Component {
           <div className="col-8">
             <div class="">
               <h4 class="">{this.props.book.name}</h4>
-              <h4>{this.props.book.author} - {this.props.book.year}</h4>
+              <h4>
+                {this.props.book.author} - {this.props.book.year}
+              </h4>
               <h5>{this.props.book.country}</h5>
               <h5>Condition: {this.props.book.condition}</h5>
 
-              
               <p>
                 Question about this book?&nbsp;
                 <a href={mailto} target="_top">
@@ -58,7 +59,7 @@ class BookComp extends Component {
               <Button className="btn-sm" color="info" onClick={this.toggle}>
                 More photos
               </Button>
-              <br/>
+              <br />
               <Modal
                 isOpen={this.state.modal}
                 toggle={this.toggle}
@@ -70,11 +71,15 @@ class BookComp extends Component {
                 <ModalBody>
                   <img
                     alt="A Book"
-                    src={`http://www.elisanet.fi/romantestaus/images/${this.props.book.id}img2`}
+                    src={`http://www.elisanet.fi/romantestaus/images/${
+                      this.props.book.id
+                    }img2`}
                   />
                   <img
                     alt="A Book"
-                    src={`http://www.elisanet.fi/romantestaus/images/${this.props.book.id}img3`}
+                    src={`http://www.elisanet.fi/romantestaus/images/${
+                      this.props.book.id
+                    }img3`}
                   />
                 </ModalBody>
                 <ModalFooter>
@@ -89,12 +94,13 @@ class BookComp extends Component {
               <br />
               <i>Description:</i>
               <p>{this.props.book.text}</p>
-              <a target="_blank" href={this.props.book.link}>More info</a>
-              <br/>
-              {
-                this.props.book.details && <i>Details: {this.props.book.details}</i>
-              }
-              
+              <a target="_blank" href={this.props.book.link}>
+                More info
+              </a>
+              <br />
+              {this.props.book.details && (
+                <i>Details: {this.props.book.details}</i>
+              )}
             </div>
           </div>
         </div>
