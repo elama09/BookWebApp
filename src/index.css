@@ -31,6 +31,12 @@ hr {
   margin-top: 40%;
 }
 
+.homeText {
+  font-size: 25px;
+  font-weight: 400;
+  font-style: italic;
+}
+
 .rotate {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);

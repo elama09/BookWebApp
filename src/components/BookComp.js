@@ -85,11 +85,11 @@ class BookComp extends Component {
                   />
                 </ModalBody>
                 <ModalFooter>
-                  <Button color="primary" onClick={this.toggle}>
+                  <Button outline color="primary" onClick={this.toggle}>
                     Back
                   </Button>
                   <a href={mailto} target="_top">
-                    <Button color="success">Send email about this book</Button>
+                    <Button outline color="success">Send email about this book</Button>
                   </a>
                 </ModalFooter>
               </Modal>

@@ -11,15 +11,15 @@ class Home extends Component {
     return (
       <div className="container mt-4">
         <div className="jumbotron">
-          <h1 className="display-4">
+          <h1 className="display-3">
             Welcome to the site - <i>Rare Russian Books</i>
           </h1>
-          <p className="lead">Rare books from a privat library for sale</p>
-          <p className="lead">
+          <p className="homeText">Rare books from a privat library for sale</p>
+          <p className="homeText">
             Please, have a look, and if any question comes to your mind I will
             be glad to answer
           </p>
-          <p className="lead">
+          <p className="homeText">
             For more information please click
             <NavLink to="/info">
               <b> Info-tab</b>
