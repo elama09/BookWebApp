@@ -19,9 +19,9 @@ class BookComp extends Component {
   }
 
   render() {
-    let mailto = `mailto:michael.tcharni@gmail.com?Subject=${
+    let mailto = `mailto:russian.books.finland@gmail.com?Subject=${
       this.props.book.name
-    }`;
+    },BookID:${this.props.book.id}`;
 
     return (
       <div>
