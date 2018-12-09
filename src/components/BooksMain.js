@@ -33,7 +33,7 @@ class BooksMain extends Component {
     elements = [];
     let counter = 1;
     for (let i = 0; i < this.state.books.length; i++) {
-      if (this.state.books[i].id % 26 === 0) {
+      if (this.state.books[i].id % 30 === 0) {
         elements.push(
           <BookComp book={this.state.books[i]} key={this.state.books[i].id} />
         );
@@ -149,19 +149,19 @@ class BooksMain extends Component {
           />
         {!this.state.searchMode &&
           this.state.current === 1 &&
-          elements.slice(0, 27)}
+          elements.slice(0, 31)}
         {!this.state.searchMode &&
           this.state.current === 2 &&
-          elements.slice(27, 54)}
+          elements.slice(31, 62)}
         {!this.state.searchMode &&
           this.state.current === 3 &&
-          elements.slice(54, 81)}
+          elements.slice(62, 93)}
         {!this.state.searchMode &&
           this.state.current === 4 &&
-          elements.slice(81, 108)}
+          elements.slice(93, 124)}
         {!this.state.searchMode &&
           this.state.current === 5 &&
-          elements.slice(108, 135)}
+          elements.slice(124)}
         {this.state.searchMode && foundBooks}
       </div>
     );
