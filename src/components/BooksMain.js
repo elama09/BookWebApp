@@ -23,8 +23,6 @@ class BooksMain extends Component {
 
   getDataFromApi() {
     getBooksFromApi(data => {
-      console.log("DATA");
-      console.log(data);
       this.setState({ books: data }, this.pushDataToPages);
     });
   }
@@ -69,8 +67,6 @@ class BooksMain extends Component {
         );
       }
     }
-    console.log(elements);
-    // console.log(this.state.books);
     this.setState({ update: !this.state.update });
   }
 
