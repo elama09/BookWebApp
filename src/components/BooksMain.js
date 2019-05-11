@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BookComp from "./BookComp";
 import Pagination from "./Pagination";
 import { getBooksFromApi } from "../service";
+import * as firebase from "firebase";
 
 var foundBooks;
 var elements = [];
@@ -9,6 +10,7 @@ var elements = [];
 class BooksMain extends Component {
   constructor(props) {
     super(props);
+    this.storageRef = firebase.storage().ref();
     this.state = {
       books: [],
       current: 1,
@@ -136,13 +138,13 @@ class BooksMain extends Component {
         </button>
         <hr />
         <Pagination
-            activePage={this.state.current}
-            pageOne={this.pageOne}
-            pageTwo={this.pageTwo}
-            pageThree={this.pageThree}
-            pageFour={this.pageFour}
-            pageFive={this.pageFive}
-          />
+          activePage={this.state.current}
+          pageOne={this.pageOne}
+          pageTwo={this.pageTwo}
+          pageThree={this.pageThree}
+          pageFour={this.pageFour}
+          pageFive={this.pageFive}
+        />
         {!this.state.searchMode &&
           this.state.current === 1 &&
           elements.slice(0, 31)}
