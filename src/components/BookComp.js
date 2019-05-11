@@ -1,15 +1,49 @@
 import React, { Component } from "react";
-import bookpic from "../img-book.jpg";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import * as firebase from "firebase";
 
 class BookComp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      pictureUrl1: null,
+      pictureUrl2: null,
+      pictureUrl3: null
     };
-
     this.toggle = this.toggle.bind(this);
+    this.imagesRef = firebase
+      .storage()
+      .ref()
+      .child("BooksPictures");
+  }
+
+  componentDidMount() {
+    this.getImageUrlFromFirestorage(1);
+    this.getImageUrlFromFirestorage(2);
+    this.getImageUrlFromFirestorage(3);
+  }
+
+  getImageUrlFromFirestorage(picNumber) {
+    this.imagesRef
+      .child(`${this.props.book.id}img${picNumber}.jpg`)
+      .getDownloadURL()
+      .then(url => {
+        switch (picNumber) {
+          case 1:
+          this.setState({pictureUrl1: url})
+            break;
+          case 2:
+          this.setState({pictureUrl2: url})
+            break;
+          case 3:
+          this.setState({pictureUrl3: url})
+            break;
+          default:
+            break;
+        }
+      })
+      .catch(err => err);
   }
 
   toggle() {
@@ -29,9 +63,7 @@ class BookComp extends Component {
           <div className="col-4">
             <img
               className="img-fluid fromImage"
-              src={`http://www.elisanet.fi/russianbooks/rarerussianbooksimages/${
-                this.props.book.id
-              }img1`}
+              src={this.state.pictureUrl1}
               style={{
                 maxWidth: "100%",
                 minWidth: "100px",
@@ -69,9 +101,7 @@ class BookComp extends Component {
                     style={{
                       maxWidth: "100%"
                     }}
-                    src={`http://www.elisanet.fi/russianbooks/rarerussianbooksimages/${
-                      this.props.book.id
-                    }img2`}
+                    src={this.state.pictureUrl2}
                   />
                   <img
                     alt=""
@@ -79,9 +109,7 @@ class BookComp extends Component {
                     style={{
                       maxWidth: "100%"
                     }}
-                    src={`http://www.elisanet.fi/russianbooks/rarerussianbooksimages/${
-                      this.props.book.id
-                    }img3`}
+                    src={this.state.pictureUrl3}
                   />
                 </ModalBody>
                 <ModalFooter>
@@ -89,7 +117,9 @@ class BookComp extends Component {
                     Back
                   </Button>
                   <a href={mailto} target="_top">
-                    <Button outline color="success">Send email about this book</Button>
+                    <Button outline color="success">
+                      Send email about this book
+                    </Button>
                   </a>
                 </ModalFooter>
               </Modal>
