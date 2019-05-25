@@ -14,10 +14,10 @@ class Home extends Component {
           <h1 className="display-3">
             Welcome to the site - <i>Rare Russian Books</i>
           </h1>
-          <p className="homeText">Rare books from a privat library for sale</p>
+          <p className="homeText">Rare books from a private library for sale.</p>
           <p className="homeText">
             Please, have a look, and if any question comes to your mind I will
-            be glad to answer
+            be glad to answer.
           </p>
           <p className="homeText">
             For more information please click
