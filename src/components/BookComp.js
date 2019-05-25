@@ -29,7 +29,7 @@ class BookComp extends Component {
           <div className="col-4">
             <img
               className="img-fluid fromImage"
-              src={`http://www.elisanet.fi/russianbooks/rarerussianbooksimages/${
+              src={`http://www.elisanet.fi/datastorage/rarerussianbooks/images/${
                 this.props.book.id
               }img1`}
               style={{
@@ -69,7 +69,7 @@ class BookComp extends Component {
                     style={{
                       maxWidth: "100%"
                     }}
-                    src={`http://www.elisanet.fi/russianbooks/rarerussianbooksimages/${
+                    src={`http://www.elisanet.fi/datastorage/rarerussianbooks/images/${
                       this.props.book.id
                     }img2`}
                   />
@@ -79,7 +79,7 @@ class BookComp extends Component {
                     style={{
                       maxWidth: "100%"
                     }}
-                    src={`http://www.elisanet.fi/russianbooks/rarerussianbooksimages/${
+                    src={`http://www.elisanet.fi/datastorage/rarerussianbooks/images/${
                       this.props.book.id
                     }img3`}
                   />
